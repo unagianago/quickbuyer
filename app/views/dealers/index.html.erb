@@ -1,1 +1,12 @@
 <%= render "shared/header" %>
+
+<ul>
+  <% @buyers.each do |buyer| %>
+    <li>
+      <%= buyer.name %>
+      <p>Category: <%= buyer.category.name %></p>
+      <p>Website: <%= link_to buyer.url, buyer.url, target: "_blank" %></p>
+      
+    </li>
+  <% end %>
+</ul>

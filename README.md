@@ -28,6 +28,7 @@
 
 | Column             | Type       | Options                     |
 | ------------------ | ---------- | --------------------------- |
+| buyer_id           | integer    | null: false                 |
 | category_id        | integer    | null: false                 |
 
 ### Association
