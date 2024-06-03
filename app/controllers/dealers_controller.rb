@@ -2,7 +2,7 @@ class DealersController < ApplicationController
   before_action :move_to_index, except: [:index]
 
   def index
-    
+    @dealers = Dealer.all
   end
   private
 
