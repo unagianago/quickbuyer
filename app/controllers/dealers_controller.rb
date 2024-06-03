@@ -2,8 +2,10 @@ class DealersController < ApplicationController
   before_action :move_to_index, except: [:index]
 
   def index
-    @dealers = Dealer.all
+    @categories = Category.all
+    @buyers = Buyer.all
   end
+  
   private
 
   def move_to_index

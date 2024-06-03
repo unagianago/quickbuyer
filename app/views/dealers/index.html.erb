@@ -1,18 +1,12 @@
 <%= render "shared/header" %>
 
 <ul>
-  <% @dealers.each do |dealer| %>
+  <% @buyers.each do |buyer| %>
     <li>
-      <%= link_to dealer.buyer.name, dealer_path(dealer) %>
-      <p>Category: <%= dealer.category.name %></p>
-      <p>Website: <%= link_to dealer.url, dealer.url, target: "_blank" %></p>
-      <% if user_signed_in? %>
-        <% if current_user.favorites.exists?(dealer_id: dealer.id) %>
-          <%= button_to 'Unfavorite', unfavorite_dealer_path(dealer), method: :delete %>
-        <% else %>
-          <%= button_to 'Favorite', favorite_dealer_path(dealer) %>
-        <% end %>
-      <% end %>
+      <%= buyer.name %>
+      <p>Category: <%= buyer.category.name %></p>
+      <p>Website: <%= link_to buyer.url, buyer.url, target: "_blank" %></p>
+      
     </li>
   <% end %>
 </ul>
