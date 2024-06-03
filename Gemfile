@@ -83,3 +83,4 @@ end
 gem 'pry-rails'
 gem 'devise'
 gem 'factory_bot_rails'
+gem 'faker'
