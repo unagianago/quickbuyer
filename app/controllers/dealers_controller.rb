@@ -5,6 +5,8 @@ class DealersController < ApplicationController
     @buyers = Buyer.all
   end
 
+
+
   private
 
   def move_to_index
