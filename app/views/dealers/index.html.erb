@@ -1,7 +1,7 @@
 <%= render "shared/header" %>
 
 <%= form_with(url: search_dealers_path, local: true, method: :get) do |f| %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name, value:params[:name] %>
   <%= f.collection_check_boxes(:category_id, Category.all, :id, :name, include_hidden: false) %>
   <%= f.submit "検索" %>
 <% end %>
