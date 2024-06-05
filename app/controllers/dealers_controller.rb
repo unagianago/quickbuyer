@@ -6,8 +6,22 @@ class DealersController < ApplicationController
   end
 
   def search
-    @q = Buyer.ransack(params[:q])
-    @buyers = @q.result
+    @buyers = Buyer.all
+
+    if params[:name].present?
+      @buyers = @buyers.select { |buyer| buyer.name.include?(params[:name]) }
+      if @buyer == ""
+        render 'index'
+      end
+    end
+  
+    if params[:category_id] != nil
+      category_ids = params[:category_id]
+      @buyers = @buyers.select { |buyer| category_ids.include?(buyer.category_id.to_s) }
+    end
+  
+    render 'index'
+
   end
 
   private
