@@ -7,7 +7,7 @@ class User < ApplicationRecord
   validates :nickname, presence: true
 
   has_many :favorites
-  has_many :buyers, through: :favorites, class_name: 'Buyer'
+  has_many :favorite_buyers, through: :favorites, source: :buyer
 
   def favorite?(buyer)
     favorite_buyers.include?(buyer)

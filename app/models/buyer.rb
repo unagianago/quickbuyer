@@ -8,6 +8,6 @@ class Buyer < ActiveHash::Base
 
   include ActiveHash::Associations
   has_many :favorites
-  has_many :favorited_by_users, through: :favorites, source: :user
+  has_many :users, through: :favorites, source: :user
   belongs_to :category
 end
