@@ -1,0 +1,10 @@
+<h1>お気に入りリスト</h1>
+
+<ul>
+  <% @favorite_buyers.each do |buyer| %>
+    <li>
+      <%= buyer.name %>
+      <%= link_to '削除', user_favorite_path(@user, buyer.id), method: :delete, data: { confirm: '本当に削除しますか？' } %>
+    </li>
+  <% end %>
+</ul>

@@ -14,7 +14,14 @@
       <%= buyer.name %>
       <p>Category: <%= buyer.category.name %></p>
       <p>Website: <%= link_to buyer.url, buyer.url, target: "_blank" %></p>
-      
+      <% if user_signed_in? %>
+        
+          <%= form_with url: user_favorites_path(current_user), method: :post, local: true do |form| %>
+            <%= form.hidden_field :buyer_id, value: buyer.id %>
+            <%= form.submit 'お気に入りに追加' %>
+          <% end %>
+        
+      <% end %>
     </li>
   <% end %>
 </ul>

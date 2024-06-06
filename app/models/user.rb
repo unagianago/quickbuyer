@@ -5,4 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :nickname, presence: true
+
+  has_many :favorites
+  has_many :favorite_buyers, through: :favorites, source: :buyer
+
+  def favorite?(buyer)
+    favorite_buyers.include?(buyer)
+  end
 end

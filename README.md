@@ -17,14 +17,14 @@
 | Column             | Type       | Options                         |
 | ------------------ | ---------- | ------------------------------- |
 | user               | references | null: false, foreign_key: true  |
-| dealer             | references | null: false, foreign_key: true  |
+| buyer_id           |  integer   | null: false                     |
 
 ### Association
 
 - belongs_to :user
-- belongs_to :dealer
+- belongs_to_active_hash :buyer
 
-## dealers テーブル
+## ActiveHash
 
 | Column             | Type       | Options                     |
 | ------------------ | ---------- | --------------------------- |
