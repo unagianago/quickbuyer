@@ -1,15 +1,10 @@
 class FavoritesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_user
+ 
 
   def index
-    @favorite_buyers = @user.favorite_buyers
-  end
-
-  private
-
-  def set_user
-    @user = current_user
+    @favorite_buyer_ids = current_user.favorites.pluck(:buyer_id)
+    @favorite_buyers = Buyer.where(id: @favorite_buyer_ids)
   end
 
 end
