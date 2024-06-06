@@ -22,7 +22,7 @@
 ### Association
 
 - belongs_to :user
-- belongs_to :dealer
+- belongs_to_active_hash :buyer
 
 ## ActiveHash
 

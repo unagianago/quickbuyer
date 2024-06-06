@@ -7,6 +7,5 @@ class Buyer < ActiveHash::Base
   ]
 
   include ActiveHash::Associations
-  has_many :dealers
   belongs_to :category
 end
