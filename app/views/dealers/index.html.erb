@@ -14,7 +14,9 @@
       <%= buyer.name %>
       <p>Category: <%= buyer.category.name %></p>
       <p>Website: <%= link_to buyer.url, buyer.url, target: "_blank" %></p>
+      <div id="favorite-btn">
       <%= render partial: "favorite", locals: { buyer: buyer } %>
+      </div>
     </li>
   <% end %>
 </ul>
