@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :users, only: [] do
+  resources :users do
     resources :favorites, only: [:index, :create, :destroy]
   end
   root to: 'dealers#index'

@@ -4,7 +4,7 @@
   <% @favorite_buyers.each do |buyer| %>
     <li>
       <%= buyer.name %>
-      <%= link_to '削除', user_favorite_path(@user, buyer.id), method: :delete, data: { confirm: '本当に削除しますか？' } %>
+      <%= link_to '削除', user_favorite_path(current_user,buyer), data: {turbo_method: :delete} %>
     </li>
   <% end %>
 </ul>
