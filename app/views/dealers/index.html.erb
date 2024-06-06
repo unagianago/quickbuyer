@@ -14,10 +14,16 @@
       <%= buyer.name %>
       <p>Category: <%= buyer.category.name %></p>
       <p>Website: <%= link_to buyer.url, buyer.url, target: "_blank" %></p>
-      
-      <%= form_with url: user_favorites_path(current_user), method: :post, local: true do |form| %>
-        <%= form.hidden_field :buyer_id, value: buyer.id %>
-        <%= form.submit 'お気に入りに追加' %>
+      <% if user_signed_in? %>
+        <% if current_user.favorites.pluck(:buyer_id) == buyer %>
+          <span>お気に入り済み</span>
+          <%= link_to '削除', favorite_path(buyer), method: :delete, data: { confirm: '本当に削除しますか？' } %>
+        <% else %>
+          <%= form_with url: user_favorites_path(current_user), method: :post, local: true do |form| %>
+            <%= form.hidden_field :buyer_id, value: buyer.id %>
+            <%= form.submit 'お気に入りに追加' %>
+          <% end %>
+        <% end %>
       <% end %>
     </li>
   <% end %>
