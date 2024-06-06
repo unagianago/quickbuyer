@@ -14,7 +14,7 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
-    favorite = Favorite.find_by(params[:id])
+    favorite = Favorite.find_by(buyer_id: params[:buyer_id],user_id: params[:user_id])
     favorite.destroy
     redirect_to root_path
   end

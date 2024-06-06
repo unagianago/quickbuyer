@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
   <% if current_user.favorites.pluck(:buyer_id).include?buyer.id %>
     <span>お気に入り済み</span>
-    <%= link_to '削除', user_favorite_path(current_user,buyer), data: {turbo_method: :delete} %>
+    <%= link_to '削除', user_favorite_by_buyer_path(current_user,buyer), data: {turbo_method: :delete} %>
   <% else %>
     <%= form_with url: user_favorites_path(current_user), method: :post, local: true do |form| %>
       <%= form.hidden_field :buyer_id, value: buyer.id %>
