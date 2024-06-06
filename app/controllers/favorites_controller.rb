@@ -10,13 +10,17 @@ class FavoritesController < ApplicationController
   def create
     favorite = current_user.favorites.build(buyer_id: params[:buyer_id],user_id: params[:user_id])
     favorite.save
-    redirect_to root_path
+    respond_to do |format|
+      format.js
+    end
   end
 
   def destroy
     favorite = Favorite.find_by(buyer_id: params[:buyer_id],user_id: params[:user_id])
     favorite.destroy
-    redirect_to root_path
+    respond_to do |format|
+      format.js
+    end
   end
   
 end
