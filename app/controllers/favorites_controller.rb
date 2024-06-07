@@ -1,5 +1,6 @@
 class FavoritesController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_buyer, only: [:create, :destroy]
  
 
   def index
@@ -33,4 +34,8 @@ private
 
 def favorite_params
   params.require(:favorite).permit(:buyer_id).merge(user_id: current_user.id)
+end
+
+def set_buyer
+  @buyer = Buyer.find_by(buyer_id: params[:buyer_id])
 end
