@@ -1,4 +1,4 @@
-<%= render "shared/header" %>
+<%= render "shared/header_favorite" %>
 
 <%= form_with(url: search_dealers_path, local: true, method: :get) do |f| %>
   <%= f.text_field :name, value:params[:name] %>
