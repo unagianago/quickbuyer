@@ -3,8 +3,12 @@ class FavoritesController < ApplicationController
  
 
   def index
-    @favorite_buyer_ids = current_user.favorites.pluck(:buyer_id)
-    @favorite_buyers = Buyer.where(id: @favorite_buyer_ids)
+    if current_user.id != params[:user_id].to_i
+      redirect_to root_path
+    else
+      @favorite_buyer_ids = current_user.favorites.pluck(:buyer_id)
+      @favorite_buyers = Buyer.where(id: @favorite_buyer_ids)
+    end
   end
 
   def create
