@@ -12,7 +12,7 @@ class FavoritesController < ApplicationController
   end
 
   def create
-    favorite = current_user.favorites.build(buyer_id: params[:buyer_id],user_id: params[:user_id])
+    favorite = Favorite.new(favorite_params)
     favorite.save
     respond_to do |format|
       format.js
@@ -27,4 +27,10 @@ class FavoritesController < ApplicationController
     end
   end
   
+end
+
+private
+
+def favorite_params
+  params.require(:favorite).permit(:buyer_id).merge(user_id: current_user.id)
 end
