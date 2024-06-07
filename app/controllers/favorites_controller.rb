@@ -15,27 +15,24 @@ class FavoritesController < ApplicationController
   def create
     favorite = Favorite.new(favorite_params)
     favorite.save
-    respond_to do |format|
-      format.js
-    end
+    render partial: "dealers/favorite", locals: { buyer: @buyer }
   end
 
   def destroy
     favorite = Favorite.find_by(buyer_id: params[:buyer_id],user_id: params[:user_id])
     favorite.destroy
-    respond_to do |format|
-      format.js
-    end
+    render partial: "dealers/favorite", locals: { buyer: @buyer }
   end
   
-end
 
-private
+  private
 
-def favorite_params
-  params.require(:favorite).permit(:buyer_id).merge(user_id: current_user.id)
-end
+  def favorite_params
+    params.require(:favorite).permit(:buyer_id).merge(user_id: current_user.id)
+  end
 
-def set_buyer
-  @buyer = Buyer.find_by(buyer_id: params[:buyer_id])
+  def set_buyer
+    @buyer = Buyer.find_by(id: params[:buyer_id])
+  end
+
 end

@@ -6,7 +6,9 @@
   <% @favorite_buyers.each do |buyer| %>
     <li>
       <%= buyer.name %>
-      <%= link_to '削除', user_favorite_by_buyer_path(current_user,buyer), data: {turbo_method: :delete} %>
+      <%= turbo_frame_tag dom_id(buyer, :favorite) do %>
+        <%= link_to '削除', user_favorite_by_buyer_path(current_user,buyer), data: {turbo_method: :delete} %>
+      <% end %>
     </li>
   <% end %>
 </ul>
