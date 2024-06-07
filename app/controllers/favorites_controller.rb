@@ -15,7 +15,7 @@ class FavoritesController < ApplicationController
     favorite = Favorite.new(favorite_params)
     favorite.save
     respond_to do |format|
-      format.js
+      format.json { render json: @data }
     end
   end
 
@@ -23,7 +23,7 @@ class FavoritesController < ApplicationController
     favorite = Favorite.find_by(buyer_id: params[:buyer_id],user_id: params[:user_id])
     favorite.destroy
     respond_to do |format|
-      format.js
+      format.json { render json: @data }
     end
   end
   
