@@ -6,6 +6,5 @@ class Favorite < ApplicationRecord
   validates :buyer_id, numericality: true, presence: true
   validates :user_id, numericality: true, presence: true
 
-  validates :user_id, uniqueness: { scope: :buyer_id}
-
+  validates :user_id, uniqueness: { scope: :buyer_id }
 end

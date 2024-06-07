@@ -9,20 +9,17 @@ class DealersController < ApplicationController
     @buyers = Buyer.all
 
     if params[:name].present?
-      names = params[:name].squish.split(" ")
+      names = params[:name].squish.split(' ')
       @buyers = @buyers.select { |buyer| names.any? { |name| buyer.name.include?(name) } }
-      if @buyer == ""
-        render 'index'
-      end
+      render 'index' if @buyer == ''
     end
-  
-    if params[:category_id] != nil
+
+    unless params[:category_id].nil?
       category_ids = params[:category_id]
       @buyers = @buyers.select { |buyer| category_ids.include?(buyer.category_id.to_s) }
     end
-  
-    render 'index'
 
+    render 'index'
   end
 
   private
