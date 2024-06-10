@@ -4,7 +4,5 @@ class Favorite < ApplicationRecord
   belongs_to :buyer, class_name: 'Buyer'
 
   validates :buyer_id, numericality: true, presence: true
-  validates :user_id, numericality: true, presence: true
-
-  validates :user_id, uniqueness: { scope: :buyer_id }
+  validates :user_id, numericality: true, presence: true, uniqueness: { scope: :buyer_id }
 end

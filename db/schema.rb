@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_06_06_012625) do
+ActiveRecord::Schema[7.0].define(version: 2024_06_10_075055) do
   create_table "favorites", charset: "utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.integer "buyer_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id", "buyer_id"], name: "index_favorites_on_user_id_and_buyer_id", unique: true
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
