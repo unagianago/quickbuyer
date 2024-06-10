@@ -24,13 +24,3 @@
 - belongs_to :user
 - belongs_to_active_hash :buyer
 
-## ActiveHash
-
-| Column             | Type       | Options                     |
-| ------------------ | ---------- | --------------------------- |
-| buyer_id           | integer    | null: false                 |
-| category_id        | integer    | null: false                 |
-
-### Association
-
-- has_many :favorites
