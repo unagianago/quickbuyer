@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Favorite, type: :model do
   before do
     user = FactoryBot.create(:user)
-    @favorite = FactoryBot.build(:favorite,user_id: user.id)
+    @favorite = FactoryBot.build(:favorite, user_id: user.id)
   end
 
   describe 'お気に入り登録' do
@@ -29,10 +29,8 @@ RSpec.describe Favorite, type: :model do
         @favorite.save
         another_favorite = FactoryBot.build(:favorite, user_id: @favorite.user_id, buyer_id: @favorite.buyer_id)
         another_favorite.valid?
-        expect(another_favorite.errors.full_messages).to include("User has already been taken")
+        expect(another_favorite.errors.full_messages).to include('User has already been taken')
       end
-
     end
   end
-
 end
