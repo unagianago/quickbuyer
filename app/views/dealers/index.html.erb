@@ -1,20 +1,33 @@
-<%= render "shared/header_favorite" %>
+<%= render "shared/header" %>
 
-<%= form_with(url: search_dealers_path, local: true, method: :get) do |f| %>
-  <%= f.text_field :name, value:params[:name] %>
-  <%= f.collection_check_boxes(:category_id, Category.all, :id, :name, include_hidden: false) %>
-  <%= f.submit "検索" %>
+<%= form_with(url: search_dealers_path, local: true, method: :get, class: "search-form") do |f| %>
+  <%= f.text_field :name, value:params[:name], class: "search-input" %>
+  <div class="category-checkboxes">
+    <%= f.collection_check_boxes(:category_id, Category.all, :id, :name, include_hidden: false) %>
+  </div>
+  <%= f.submit "検索", class: "search-button" %>
+  
 <% end %>
 
 
 
-<ul>
+<ul class="buyer-list">
   <% @buyers.each do |buyer| %>
-    <li>
-      <%= buyer.name %>
-      <p>Category: <%= buyer.category.name %></p>
-      <p>Website: <%= link_to buyer.url, buyer.url, target: "_blank" %></p>
-        <%= render partial: "favorite", locals: { buyer: buyer } %>
+    <li class="buyer-item">
+      <div class="buyer-details">
+        <div>
+          <%= buyer.name %>
+          <span class="buyer-category">Category: <%= buyer.category.name %></span>
+        </div>
+        <div>
+          <%= link_to  buyer.url, target: "_blank",class:"button" do %>
+            公式サイトはこちら
+          <% end %>
+        </div>
+        <div class="buyer-actions">
+          <%= render partial: "favorite", locals: { buyer: buyer } %>
+        </div>
+      </div>
     </li>
   <% end %>
 </ul>

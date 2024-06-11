@@ -1,0 +1,14 @@
+.favorite-text {
+  font-weight: bold;
+  color: #007bff;
+}
+
+.delete-favorite-link,
+.add-favorite-button {
+  padding: 4px 8px;
+  font-size: 14px;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}

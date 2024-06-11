@@ -1,0 +1,43 @@
+.favorite-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.favorite-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.favorite-category {
+  font-style: italic;
+  color: #555;
+  display: inline-block;
+}
+
+.favorite-actions {
+  display: flex;
+  align-items: center;
+}
+
+.favorite-actions > * {
+  margin-left: 10px; 
+}
+
+.delete-favorite-button {
+  margin-left: 20px; 
+}
+
+.button {
+  display: inline-block; 
+  margin: 10px;
+  padding: 10px 20px; 
+  background-color: red; 
+  color: #fff; 
+  border: none; 
+  border-radius: 4px; 
+  cursor: pointer; 
+  text-decoration: none; 
+}

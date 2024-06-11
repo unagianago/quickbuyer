@@ -1,0 +1,79 @@
+/* Search Form */
+.search-form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-input {
+  margin-bottom: 10px;
+  width: 150px;
+  padding: 8px;
+}
+
+.category-checkboxes {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.category-checkboxes label {
+  display: flex;
+  align-items: center;
+  width: auto;
+  margin-right: 10px;
+}
+
+.search-button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+/* Buyer List */
+.buyer-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.buyer-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.buyer-category {
+  font-style: italic;
+  color: #555;
+  display: inline-block;
+}
+
+.buyer-actions {
+  display: flex;
+  align-items: center;
+}
+
+.buyer-actions > * {
+  margin-left: 10px; 
+}
+
+.add-favorite-button {
+  margin-left: 20px; 
+}
+
+.button {
+  display: inline-block; 
+  margin: 10px;
+  padding: 10px 20px; 
+  background-color: red; 
+  color: #fff; 
+  border: none; 
+  border-radius: 4px; 
+  cursor: pointer; 
+  text-decoration: none; 
+}
