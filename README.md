@@ -1,26 +1,60 @@
-# テーブル設計
-
-## users テーブル
-
-| Column             | Type   | Options                     |
-| ------------------ | ------ | --------------------------- |
-| nickname           | string | null: false                 |
-| email              | string | null: false, unique: true   |
-| encrypted_password | string | null: false                 |
-
-### Association
-
-- has_many :favorites
-
-## favorites テーブル
-
-| Column             | Type       | Options                         |
-| ------------------ | ---------- | ------------------------------- |
-| user               | references | null: false, foreign_key: true  |
-| buyer_id           |  integer   | null: false                     |
-
-### Association
-
-- belongs_to :user
-- belongs_to_active_hash :buyer
-
+# アプリケーション名  
+QUICK BUYER
+# アプリケーションの概要  
+買取業者を様々な条件で検索し、公式ページへの遷移や  
+お気に入り登録を行うことができる。  
+# URL  
+https://quickbuyer.onrender.com  
+# テスト用アカウント  
+- Basic認証ID　admin  
+- Basic認証パスワード　4580238  
+- メールアドレス　hoge@com  
+- パスワード　1q1q1q  
+# 利用方法  
+## 買取業者を検索  
+1. トップページ（買取業者一覧ページ）のヘッダーからユーザー新規登録を行う  
+2. テキストフォームやチェックボックスで検索条件を絞り検索する  
+3. 「公式ページはこちら」ボタンから公式ホームページに遷移する  
+## お気に入りに登録する  
+1. トップページから気に入った買取業者があれば、「お気に入りに追加」ボタンを押してお気に入り登録を行う  
+2. ヘッダーからお気に入り買取業者一覧ページへ遷移する  
+3. お気に入り買取業者一覧ページで自身のお気に入りを管理することができ、お気に入りから削除できる  
+# アプリケーションを作成した背景  
+自身が服や時計など、様々な物をどこで売ろうかと考えたときに希望するカテゴリーや買取方法、買取可能地域などの検索に非常に時間を要するという課題が判明した。その課題を分析した結果、一つ一つ各業者のホームページで買取条件を特定する行為が非効率であることが原因であると仮説を立てた。この原因を解決するために各条件で買取業者を検索できるアプリケーションを開発することにした。  
+# 実装した機能についての画像やGIF及びその説明  
+## ユーザー管理機能
+[![Image from Gyazo](https://i.gyazo.com/c34d94be80f28c8bf905951fdb6026e0.png)](https://gyazo.com/c34d94be80f28c8bf905951fdb6026e0)  
+ユーザー新規登録画面からユーザー登録を行う  
+## 買取業者検索機能  
+[![Image from Gyazo](https://i.gyazo.com/66ef3fdd69320630e5737f7ae5a0b25c.gif)](https://gyazo.com/66ef3fdd69320630e5737f7ae5a0b25c)  
+希望する条件で絞り買取業者を検索する  
+## お気に入り登録機能  
+[![Image from Gyazo](https://i.gyazo.com/74a00f31505176755abeff3219e9524a.gif)](https://gyazo.com/74a00f31505176755abeff3219e9524a)  
+「お気に入りに追加」ボタンからお気に入りに登録し、ヘッダーからお気に入り買取業者一覧ページに遷移する  
+## フォーカスが現れるバグ修正中  
+# 実装予定の機能  
+現在、新たな検索条件を追加中。  
+また、ユーザーログイン及び新規登録ページのレイアウトを編集予定。
+# データベース設計  
+[![Image from Gyazo](https://i.gyazo.com/b951b1b3279d975d6bc17245bca034ea.png)](https://gyazo.com/b951b1b3279d975d6bc17245bca034ea)  
+# 画面遷移図  
+[![Image from Gyazo](https://i.gyazo.com/b8ac88b9bff2b3a704e2dce0ba260b67.png)](https://gyazo.com/b8ac88b9bff2b3a704e2dce0ba260b67)  
+# 開発環境  
+- フロントエンド  
+- バッグエンド  
+- インフラ  
+- テスト  
+- テキストエディタ  
+- タスク管理  
+# ローカルでの動作方法  
+以下のコマンドを順に実行。  
+% git clone https://github.com/unagianago/quickbuyer.git  
+% cd quickbuyer  
+% bundle install  
+% yarn install  
+# 工夫したポイント  
+今回作成したアプリケーションにおいて、最も工夫した点はActiveHashの活用である。買取業者の情報を全てActiveHashに保存することで、余計なデータベースを増やすことなく管理がしやすくなっている。それに伴いUserとActiveHashの中間テーブルとしてのお気に入り機能は、新たな試みであったがこれまでの学習を応用して実装した。  
+# 改善点  
+利用する人が見やすいようにimage_tagメソッドを利用して写真を追加する。また、CSSにプロパティを追加して買取業者一覧をさらに見やすいレイアウトにする。  
+# 製作時間  
+14日

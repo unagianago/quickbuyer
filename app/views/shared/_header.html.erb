@@ -1,9 +1,11 @@
 <header class="top-header">
   <div class="header-content">
     <div class="header-left">
-      <h1 class="app-title"><%= link_to "Quick Buyer", root_path, class: 'no-underline' %></h1>
+      <h1 class="app-title">
+        <%= link_to "Quick Buyer", root_path, class: 'no-underline' %>
+      </h1>
       <% if user_signed_in? %>
-        <p class="welcome-message">ようこそ, <%= current_user.email %>さん</p>
+        <p class="welcome-message">ようこそ, <%= current_user.nickname %>さん</p>
       <% end %>
     </div>
 
