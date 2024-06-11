@@ -1,7 +1,7 @@
 <%= render "shared/header" %>
 
 <%= form_with(url: search_dealers_path, local: true, method: :get, class: "search-form") do |f| %>
-  <%= f.text_field :name, value:params[:name], class: "search-input", autofocus: true %>
+  <%= f.text_field :name, value:params[:name], class: "search-input" %>
   <div class="category-checkboxes">
     <%= f.collection_check_boxes(:category_id, Category.all, :id, :name, include_hidden: false) %>
   </div>
