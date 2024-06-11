@@ -10,8 +10,10 @@
           <%= buyer.name %>
           <span class="favorite-category">Category: <%= buyer.category.name %></span>
         </div>
-        <div class="favorite-website">
-          Website: <%= link_to buyer.url, buyer.url, target: "_blank" %>
+        <div>
+          <%= link_to  buyer.url, target: "_blank", class:"button" do %>
+            公式サイトはこちら
+          <% end %>
         </div>
         <div class="favorite-actions">
           <%= turbo_frame_tag dom_id(buyer, :favorite) do %>

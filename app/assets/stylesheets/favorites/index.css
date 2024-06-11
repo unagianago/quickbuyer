@@ -11,8 +11,7 @@
   flex-direction: column;
 }
 
-.favorite-category,
-.favorite-website {
+.favorite-category {
   font-style: italic;
   color: #555;
   display: inline-block;
@@ -29,4 +28,16 @@
 
 .delete-favorite-button {
   margin-left: 20px; 
+}
+
+.button {
+  display: inline-block; 
+  margin: 10px;
+  padding: 10px 20px; 
+  background-color: red; 
+  color: #fff; 
+  border: none; 
+  border-radius: 4px; 
+  cursor: pointer; 
+  text-decoration: none; 
 }
