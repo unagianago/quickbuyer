@@ -1,14 +1,24 @@
 <%= render "shared/header" %>
 
-<h1>お気に入りリスト</h1>
+<h1 class="page-title">お気に入りリスト</h1>
 
-<ul>
+<ul class="favorite-list">
   <% @favorite_buyers.each do |buyer| %>
-    <li>
-      <%= buyer.name %>
-      <%= turbo_frame_tag dom_id(buyer, :favorite) do %>
-        <%= link_to '削除', user_favorite_by_buyer_path(current_user,buyer), data: {turbo_method: :delete} %>
-      <% end %>
+    <li class="favorite-item">
+      <div class="favorite-details">
+        <div>
+          <%= buyer.name %>
+          <span class="favorite-category">Category: <%= buyer.category.name %></span>
+        </div>
+        <div class="favorite-website">
+          Website: <%= link_to buyer.url, buyer.url, target: "_blank" %>
+        </div>
+        <div class="favorite-actions">
+          <%= turbo_frame_tag dom_id(buyer, :favorite) do %>
+            <%= link_to '削除', user_favorite_by_buyer_path(current_user,buyer), data: {turbo_method: :delete} %>
+          <% end %>
+        </div>
+      </div>
     </li>
   <% end %>
 </ul>

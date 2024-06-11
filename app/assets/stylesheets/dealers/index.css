@@ -60,9 +60,9 @@
 }
 
 .buyer-actions > * {
-  margin-left: 10px; /* ボタンの左側に余白を追加 */
+  margin-left: 10px; 
 }
 
 .add-favorite-button {
-  margin-left: 20px; /* ボタンとリンクの間の余白を追加 */
+  margin-left: 20px; 
 }

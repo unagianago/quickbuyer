@@ -1,0 +1,32 @@
+.favorite-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.favorite-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.favorite-category,
+.favorite-website {
+  font-style: italic;
+  color: #555;
+  display: inline-block;
+}
+
+.favorite-actions {
+  display: flex;
+  align-items: center;
+}
+
+.favorite-actions > * {
+  margin-left: 10px; 
+}
+
+.delete-favorite-button {
+  margin-left: 20px; 
+}

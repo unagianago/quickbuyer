@@ -19,9 +19,10 @@
           <%= buyer.name %>
           <span class="buyer-category">Category: <%= buyer.category.name %></span>
         </div>
+        <div class="buyer-website">
+          Website: <%= link_to buyer.url, buyer.url, target: "_blank" %>
+        </div>
         <div class="buyer-actions">
-          <span class="buyer-website">Website: <%= link_to buyer.url, buyer.url, target: "_blank", class: "buyer-website" %></span><br>
-        
           <%= render partial: "favorite", locals: { buyer: buyer } %>
         </div>
       </div>
