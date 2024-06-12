@@ -26,12 +26,13 @@ https://quickbuyer.onrender.com
 [![Image from Gyazo](https://i.gyazo.com/c34d94be80f28c8bf905951fdb6026e0.png)](https://gyazo.com/c34d94be80f28c8bf905951fdb6026e0)  
 ユーザー新規登録画面からユーザー登録を行う  
 ## 買取業者検索機能  
-[![Image from Gyazo](https://i.gyazo.com/66ef3fdd69320630e5737f7ae5a0b25c.gif)](https://gyazo.com/66ef3fdd69320630e5737f7ae5a0b25c)  
+[![Image from Gyazo](https://i.gyazo.com/f1eeba120a8a50f4cd2ff482feea30d4.gif)](https://gyazo.com/f1eeba120a8a50f4cd2ff482feea30d4)  
 希望する条件で絞り買取業者を検索する  
 ## お気に入り登録機能  
-[![Image from Gyazo](https://i.gyazo.com/74a00f31505176755abeff3219e9524a.gif)](https://gyazo.com/74a00f31505176755abeff3219e9524a)  
+[![Image from Gyazo](https://i.gyazo.com/ef0fe2c04cb789e82acebda0d53d37e5.gif)](https://gyazo.com/ef0fe2c04cb789e82acebda0d53d37e5)  
 「お気に入りに追加」ボタンからお気に入りに登録し、ヘッダーからお気に入り買取業者一覧ページに遷移する  
-## フォーカスが現れるバグ修正中  
+[![Image from Gyazo](https://i.gyazo.com/7e28fc7506d8af3b358b3a8177bd8264.gif)](https://gyazo.com/7e28fc7506d8af3b358b3a8177bd8264)  
+お気に入り買取業者一覧ページからお気に入りを削除し、「Quick Buyer」ロゴからトップページに戻る  
 # 実装予定の機能  
 現在、新たな検索条件を追加中。  
 また、ユーザーログイン及び新規登録ページのレイアウトを編集予定。
@@ -55,6 +56,6 @@ https://quickbuyer.onrender.com
 # 工夫したポイント  
 今回作成したアプリケーションにおいて、最も工夫した点はActiveHashの活用である。買取業者の情報を全てActiveHashに保存することで、余計なデータベースを増やすことなく管理がしやすくなっている。それに伴いUserとActiveHashの中間テーブルとしてのお気に入り機能は、新たな試みであったがこれまでの学習を応用して実装した。  
 # 改善点  
-利用する人が見やすいようにimage_tagメソッドを利用して写真を追加する。また、CSSにプロパティを追加して買取業者一覧をさらに見やすいレイアウトにする。  
+利用する人が見やすいように買取業者一覧ページをimage_tagメソッドを利用して写真を追加したり、CSSにプロパティを追加してさらに見やすいレイアウトにする。また、買取業者ごとに「お気に入りに追加」ボタンが複数回レンダリングされているため、フラグメントキャッシングやコレクションレンダリングを利用して、最適化する。  
 # 製作時間  
 14日
