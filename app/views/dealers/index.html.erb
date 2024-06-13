@@ -3,7 +3,7 @@
 <%= form_with(url: search_dealers_path, local: true, method: :get, class: "search-form") do |f| %>
   <%= f.text_field :name, value:params[:name], class: "search-input", placeholder:"例）BOOK-OFF" %>
   <div class="category-checkboxes">
-    <%= f.collection_check_boxes(:category_id, Category.all, :id, :name, include_hidden: false) %>
+    <%= f.collection_check_boxes(:category_id, Category.all, :id, :name, include_hidden: false, checked:@category_ids ) %>
   </div>
   <%= f.submit "検索", class: "search-button" %>
 <% end %>
