@@ -7,7 +7,7 @@
     <li class="favorite-item">
       <div class="favorite-details">
         <div>
-          <%= buyer.name %>
+          <%= link_to buyer.name, buyer.url, target: "_blank"  %>
           <span class="favorite-category">Category: <%= buyer.category.name %></span>
         </div>
         <div>

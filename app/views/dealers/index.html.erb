@@ -15,7 +15,7 @@
     <li class="buyer-item">
       <div class="buyer-details">
         <div>
-          <%= buyer.name %>
+          <%= link_to buyer.name, buyer.url, target: "_blank"  %>
           <span class="buyer-category">Category: <%= buyer.category.name %></span>
         </div>
         <div>
