@@ -16,7 +16,16 @@
       <div class="buyer-details">
         <div>
           <%= link_to buyer.name, buyer.url, target: "_blank"  %>
-          <span class="buyer-category">Category: <%= buyer.category.name %></span>
+          <span class="buyer-category">
+            Category: 
+              <% if buyer.category_id.is_a?(Array) %>
+                <% buyer.category_id.each do |category_id| %>
+                  <%= Category.find(category_id).name %>
+                <% end %>
+              <% else %>
+                <%= buyer.category.name %>
+              <% end %>
+          </span>
         </div>
         <div>
           <%= link_to  buyer.url, target: "_blank",class:"button" do %>
