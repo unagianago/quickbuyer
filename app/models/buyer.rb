@@ -13,7 +13,7 @@ class Buyer < ActiveHash::Base
     { id: 6, name: 'さのや', category_id: 7,
       url: 'https://www.sanoya.co.jp/kaitori/?gad_source=1&gclid=CjwKCAjwyJqzBhBaEiwAWDRJVP7do3XtIP3vTu4KaLy1Zy-ICR2RXT50yIeX7riyuMbUCaGHKesiiRoCQTwQAvD_BwE' },
     { id: 7, name: 'BOOK-OFF', category_id: 8, url: 'https://www.bookoff.co.jp/sell/' },
-    { id: 8, name: 'トイズキング', category_id: [9,11,14],
+    { id: 8, name: 'トイズキング', category_id: [9,10,11,14],
       url: 'https://www.toysking.jp/?gad_source=1&gclid=CjwKCAjwyJqzBhBaEiwAWDRJVFmO9XJLJqvi9xS7U4MXn1fChpj_0A9Bo-1A_f2pfTXhJRwTDo3faBoC8YYQAvD_BwE' },
     { id: 9, name: 'A-SPORTS', category_id: 10,
       url: 'https://a-sports10.com/sports/?glnw=g&glad=516734748614&glpm=&glkw=%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%20%E3%82%B0%E3%83%83%E3%82%BA%20%E8%B2%B7%E5%8F%96&glti=kwd-314301825342&gllc=1009322&glmt=b&glfi=&gldv=c&gldm=&glcp=12824506749&gad_source=1&gclid=CjwKCAjwyJqzBhBaEiwAWDRJVHuKs9ISB3CLT_wHx4_bdC0ZXYgO5AwqrVzJ8brJbRTDLauIEwsqVxoCvYoQAvD_BwE' },
@@ -28,7 +28,8 @@ class Buyer < ActiveHash::Base
     { id: 14, name: 'YTH', category_id: 15,
       url: 'https://pc-kaitorisatei.com/?utm_source=google&utm_medium=cpc&utm_campaign=big_pc&gad_source=1&gclid=CjwKCAjwyJqzBhBaEiwAWDRJVDA8xMu-MMAALSokezsGxzPHlkh89-UrLqOlGBY0KPJ0JBolKE0s8xoCFqgQAvD_BwE' },
     { id: 15, name: '福ちゃん', category_id: 16, url: 'https://fuku-chan.jp/kosen4/?page=la&item=kosen&caf_session_id=xuidx9004c8f3a7xb1f&caf_ad_id=418&cid=so-202406114e89c2f427875eee50b59ebdc4a8df60&utm_term' },
-    { id: 16, name: 'THE GOLD', category_id: 6, url: 'https://www.the-gold.jp/feature/kimono/l4/?utm_source=&caf_session_id&caf_ad_id&caf_session_id=xuidx900fa75a48xaff&caf_ad_id=409&hc_uus=45c36c6ef927c40ed7fa24b2b8bd7aa0&link_code_ak=XZ7LU.1.NBTSO&referer=' }
+    { id: 16, name: 'THE GOLD', category_id: 6, url: 'https://www.the-gold.jp/feature/kimono/l4/?utm_source=&caf_session_id&caf_ad_id&caf_session_id=xuidx900fa75a48xaff&caf_ad_id=409&hc_uus=45c36c6ef927c40ed7fa24b2b8bd7aa0&link_code_ak=XZ7LU.1.NBTSO&referer=' },
+    { id: 17, name: 'sy 買取センター', category_id: [9,14], url: 'https://www.sy-kaitori.com/' }
   ]
 
   include ActiveHash::Associations
