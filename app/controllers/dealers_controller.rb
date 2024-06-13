@@ -15,8 +15,14 @@ class DealersController < ApplicationController
     end
 
     unless params[:category_id].nil?
-      category_ids = params[:category_id]
-      @buyers = @buyers.select { |buyer| category_ids.include?(buyer.category_id.to_s) }
+      category_ids = Array(params[:category_id]) 
+      @buyers = @buyers.select { |buyer| 
+        if buyer.category_id.is_a?(Array)
+          (buyer.category_id.map(&:to_s) & category_ids).any? 
+        else
+          category_ids.include?(buyer.category_id.to_s)
+        end
+      }
     end
 
     render 'index'

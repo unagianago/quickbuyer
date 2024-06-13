@@ -1,7 +1,7 @@
 <%= render "shared/header" %>
 
 <%= form_with(url: search_dealers_path, local: true, method: :get, class: "search-form") do |f| %>
-  <%= f.text_field :name, value:params[:name], class: "search-input" %>
+  <%= f.text_field :name, value:params[:name], class: "search-input", placeholder:"例）BOOK-OFF" %>
   <div class="category-checkboxes">
     <%= f.collection_check_boxes(:category_id, Category.all, :id, :name, include_hidden: false) %>
   </div>
@@ -15,8 +15,17 @@
     <li class="buyer-item">
       <div class="buyer-details">
         <div>
-          <%= buyer.name %>
-          <span class="buyer-category">Category: <%= buyer.category.name %></span>
+          <%= link_to buyer.name, buyer.url, target: "_blank"  %>
+          <span class="buyer-category">
+            Category: 
+              <% if buyer.category_id.is_a?(Array) %>
+                <% buyer.category_id.each do |category_id| %>
+                  <%= Category.find(category_id).name %>
+                <% end %>
+              <% else %>
+                <%= buyer.category.name %>
+              <% end %>
+          </span>
         </div>
         <div>
           <%= link_to  buyer.url, target: "_blank",class:"button" do %>

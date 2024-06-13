@@ -7,8 +7,17 @@
     <li class="favorite-item">
       <div class="favorite-details">
         <div>
-          <%= buyer.name %>
-          <span class="favorite-category">Category: <%= buyer.category.name %></span>
+          <%= link_to buyer.name, buyer.url, target: "_blank"  %>
+          <span class="favorite-category">
+            Category: 
+              <% if buyer.category_id.is_a?(Array) %>
+                <% buyer.category_id.each do |category_id| %>
+                  <%= Category.find(category_id).name %>
+                <% end %>
+              <% else %>
+                <%= buyer.category.name %>
+              <% end %>
+          </span>
         </div>
         <div>
           <%= link_to  buyer.url, target: "_blank", class:"button" do %>
