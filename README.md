@@ -26,15 +26,16 @@ https://quickbuyer.onrender.com
 [![Image from Gyazo](https://i.gyazo.com/c34d94be80f28c8bf905951fdb6026e0.png)](https://gyazo.com/c34d94be80f28c8bf905951fdb6026e0)  
 ユーザー新規登録画面からユーザー登録を行う  
 ## 買取業者検索機能  
-[![Image from Gyazo](https://i.gyazo.com/f1eeba120a8a50f4cd2ff482feea30d4.gif)](https://gyazo.com/f1eeba120a8a50f4cd2ff482feea30d4)  
+![Image from Gyazo](https://i.gyazo.com/fbc70c1b10224662ac5755ca44f99aa5.gif) 
 希望する条件で絞り買取業者を検索する  
 ## お気に入り登録機能  
-[![Image from Gyazo](https://i.gyazo.com/ef0fe2c04cb789e82acebda0d53d37e5.gif)](https://gyazo.com/ef0fe2c04cb789e82acebda0d53d37e5)  
+![Image from Gyazo](https://i.gyazo.com/5fe6cf62d0baceeffe2316570c8584a9.gif)  
 「お気に入りに追加」ボタンからお気に入りに登録し、ヘッダーからお気に入り買取業者一覧ページに遷移する  
-[![Image from Gyazo](https://i.gyazo.com/7e28fc7506d8af3b358b3a8177bd8264.gif)](https://gyazo.com/7e28fc7506d8af3b358b3a8177bd8264)  
+  
+![Image from Gyazo](https://i.gyazo.com/e1c6f469acd8b54d6855c26fcbc42922.gif)  
 お気に入り買取業者一覧ページからお気に入りを削除し、「Quick Buyer」ロゴからトップページに戻る  
 # 実装予定の機能  
-現在、新たな検索条件を追加中。  
+現在、新たな検索条件を追加。  
 また、ユーザーログイン及び新規登録ページのレイアウトを編集予定。
 # データベース設計  
 [![Image from Gyazo](https://i.gyazo.com/b951b1b3279d975d6bc17245bca034ea.png)](https://gyazo.com/b951b1b3279d975d6bc17245bca034ea)  
@@ -43,10 +44,13 @@ https://quickbuyer.onrender.com
 # 開発環境  
 - フロントエンド  
 - バッグエンド  
-- インフラ  
 - テスト  
 - テキストエディタ  
 - タスク管理  
+- HTML/CSS  
+- Ruby  
+- Ruby on Rails  
+- JavaScript  
 # ローカルでの動作方法  
 以下のコマンドを順に実行。  
 % git clone https://github.com/unagianago/quickbuyer.git  
