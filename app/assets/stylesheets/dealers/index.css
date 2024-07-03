@@ -53,6 +53,12 @@
   display: inline-block;
 }
 
+.buyer-method {
+  font-style: italic;
+  color: #555;
+  display: inline-block;
+}
+
 .buyer-actions {
   display: flex;
   align-items: center;

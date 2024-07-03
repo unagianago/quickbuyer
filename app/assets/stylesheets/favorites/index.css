@@ -17,6 +17,12 @@
   display: inline-block;
 }
 
+.favorite-method {
+  font-style: italic;
+  color: #555;
+  display: inline-block;
+}
+
 .favorite-actions {
   display: flex;
   align-items: center;

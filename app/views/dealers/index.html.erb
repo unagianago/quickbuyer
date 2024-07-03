@@ -27,6 +27,16 @@
               <% end %>
           </span>
         </div>
+        <div class="buyer-method">
+          買取方法:
+            <% if buyer.method_id.is_a?(Array) %>
+                <% buyer.method_id.each do |method_id| %>
+                  <%= Method.find(method_id).name %>
+                <% end %>
+              <% else %>
+                <%= buyer.method.name %>
+              <% end %>
+        </div>
         <div>
           <%= link_to  buyer.url, target: "_blank",class:"button" do %>
             公式サイトはこちら
