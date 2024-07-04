@@ -12,15 +12,11 @@
 }
 
 .favorite-category {
-  font-style: italic;
   color: #555;
-  display: inline-block;
 }
 
-.favorite-method {
-  font-style: italic;
+.favorite-procedure {
   color: #555;
-  display: inline-block;
 }
 
 .favorite-actions {

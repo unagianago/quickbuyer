@@ -48,15 +48,11 @@
 }
 
 .buyer-category {
-  font-style: italic;
   color: #555;
-  display: inline-block;
 }
 
-.buyer-method {
-  font-style: italic;
+.buyer-procedure {
   color: #555;
-  display: inline-block;
 }
 
 .buyer-actions {

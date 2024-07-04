@@ -16,30 +16,30 @@
       <div class="buyer-details">
         <div>
           <%= link_to buyer.name, buyer.url, target: "_blank"  %>
-          <span class="buyer-category">
-            Category: 
-              <% if buyer.category_id.is_a?(Array) %>
-                <% buyer.category_id.each do |category_id| %>
-                  <%= Category.find(category_id).name %>
-                <% end %>
-              <% else %>
-                <%= buyer.category.name %>
-              <% end %>
-          </span>
         </div>
-        <div class="buyer-method">
-          買取方法:
-            <% if buyer.method_id.is_a?(Array) %>
-                <% buyer.method_id.each do |method_id| %>
-                  <%= Method.find(method_id).name %>
-                <% end %>
-              <% else %>
-                <%= buyer.method.name %>
+        <div class="buyer-category">
+          カテゴリー:
+            <% if buyer.category_id.is_a?(Array) %>
+              <% buyer.category_id.each do |category_id| %>
+                <%= Category.find(category_id).name %>
               <% end %>
+            <% else %>
+              <%= buyer.category.name %>
+            <% end %>
+        </div>
+        <div class="buyer-procedure">
+          買取方法:
+            <% if buyer.procedure_id.is_a?(Array) %>
+              <% buyer.procedure_id.each do |procedure_id| %>
+                <%= Procedure.find(procedure_id).name %>
+              <% end %>
+            <% else %>
+              <%= buyer.procedure.name %>
+            <% end %>
         </div>
         <div>
           <%= link_to  buyer.url, target: "_blank",class:"button" do %>
-            公式サイトはこちら
+            公式サイト
           <% end %>
         </div>
         <div class="buyer-actions">

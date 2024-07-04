@@ -1,4 +1,4 @@
-class Method < ActiveHash::Base
+class Procedure < ActiveHash::Base
   self.data = [
     { id: 1, name: '持ち込み' },
     { id: 2, name: '郵送' },
