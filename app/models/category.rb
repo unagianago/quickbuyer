@@ -5,7 +5,7 @@ class Category < ActiveHash::Base
     { id: 3, name: '家電' },
     { id: 4, name: '家具' },
     { id: 5, name: 'ファッション' },
-    { id: 6, name: '着物' }, 
+    { id: 6, name: '着物' },
     { id: 7, name: 'ブランド品' },
     { id: 8, name: '書籍・メディア' },
     { id: 9, name: 'ゲーム・玩具' },
