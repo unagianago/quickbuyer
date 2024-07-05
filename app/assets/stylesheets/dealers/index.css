@@ -11,17 +11,17 @@
   padding: 8px;
 }
 
-.category-checkboxes {
+.search-list {
   display: flex;
-  flex-wrap: wrap;
   margin-bottom: 10px;
 }
 
-.category-checkboxes label {
-  display: flex;
-  align-items: center;
-  width: auto;
-  margin-right: 10px;
+.category-list {
+  flex-wrap: wrap;
+}
+
+.procedure-list {
+  flex-wrap: wrap;
 }
 
 .search-button {
@@ -48,9 +48,11 @@
 }
 
 .buyer-category {
-  font-style: italic;
   color: #555;
-  display: inline-block;
+}
+
+.buyer-procedure {
+  color: #555;
 }
 
 .buyer-actions {

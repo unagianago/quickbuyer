@@ -14,17 +14,32 @@ class DealersController < ApplicationController
       render 'index' if @buyer == ''
     end
 
-    unless params[:category_id].nil?
-      @category_ids = Array(params[:category_id]) 
-      @buyers = @buyers.select { |buyer| 
-        if buyer.category_id.is_a?(Array)
-          (buyer.category_id.map(&:to_s) & @category_ids) == @category_ids
+    if !params[:category_id].blank? || !params[:procedure_id].blank?
+      @category_ids = Array(params[:category_id])
+      @procedure_ids = Array(params[:procedure_id])
+      @buyers = @buyers.select do |buyer|
+        category_match = if buyer.category_id.is_a?(Array)
+                           (buyer.category_id.map(&:to_s) & @category_ids) == @category_ids
+                         else
+                           @category_ids.include?(buyer.category_id.to_s) unless @category_ids.length > 1
+                         end
+
+        procedure_match = if buyer.procedure_id.is_a?(Array)
+                            (buyer.procedure_id.map(&:to_s) & @procedure_ids) == @procedure_ids
+                          else
+                            @procedure_ids.include?(buyer.procedure_id.to_s) unless @procedure_ids.length > 1
+                          end
+
+        if params[:category_id].present? && params[:procedure_id].present?
+          category_match && procedure_match
+        elsif params[:category_id].present?
+          category_match
+        elsif params[:procedure_id].present?
+          procedure_match
         else
-          unless @category_ids.length > 1
-            @category_ids.include?(buyer.category_id.to_s)
-          end
+          true
         end
-      }
+      end
     end
 
     render 'index'

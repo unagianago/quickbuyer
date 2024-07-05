@@ -35,8 +35,7 @@ https://quickbuyer.onrender.com
 ![Image from Gyazo](https://i.gyazo.com/e1c6f469acd8b54d6855c26fcbc42922.gif)  
 お気に入り買取業者一覧ページからお気に入りを削除し、「Quick Buyer」ロゴからトップページに戻る  
 # 実装予定の機能  
-現在、新たな検索条件を追加。  
-また、ユーザーログイン及び新規登録ページのレイアウトを編集予定。
+現在、新たな検索条件を追加予定。  
 # データベース設計  
 [![Image from Gyazo](https://i.gyazo.com/b951b1b3279d975d6bc17245bca034ea.png)](https://gyazo.com/b951b1b3279d975d6bc17245bca034ea)  
 # 画面遷移図  

@@ -12,9 +12,11 @@
 }
 
 .favorite-category {
-  font-style: italic;
   color: #555;
-  display: inline-block;
+}
+
+.favorite-procedure {
+  color: #555;
 }
 
 .favorite-actions {
